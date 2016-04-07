@@ -1,0 +1,6 @@
+web:
+  image: raspberry_test
+  ports:
+    - 80:80
+  volumes:
+    - .:/src
