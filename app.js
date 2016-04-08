@@ -1,3 +1,5 @@
+var config = require('./config');
+
 var debug = require('debug')('raspberry_node_test:server');
 var http = require('http');
 
@@ -22,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var controllers = require('./src/Controller/index');
+var controllers = require('./src/controller/index');
 app.use(controllers);
 
 // catch 404 and forward to error handler
@@ -59,7 +61,7 @@ app.use(function(err, req, res, next) {
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort('80');
+var port = normalizePort(config.port);
 app.set('port', port);
 
 /**
