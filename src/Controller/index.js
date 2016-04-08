@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var users = require('./users');
+var system = require('./api/system');
 
-router.use('/users', users);
+router.use('/api/system', system);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

@@ -1,3 +1,7 @@
+# docker-machine start default
+# eval "$(docker-machine env default)"
+# docker-compose up
+
 FROM    debian:jessie
 
 RUN apt-get update && \
@@ -16,7 +20,7 @@ ADD . /src
 WORKDIR /src
 
 # install the dependencies
-RUN cd /src && npm install
+RUN cd /src && npm install && echo "2"
 
 # expose the port so host can have access
 
